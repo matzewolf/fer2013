@@ -4,9 +4,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 data = pd.read_csv('../fer2013-data/fer2013.csv')
-''' Save and extract data from 
-https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
-to a 'fer2013-data' directory one layer above this Git repository. '''
+# Save and extract data from
+# https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
+# to a 'fer2013-data' directory one layer above this Git repository.
 
 width, height = 48, 48
 
