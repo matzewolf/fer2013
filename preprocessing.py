@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import warnings
-warnings.filterwarnings("ignore")
+# import warnings
+# warnings.filterwarnings("ignore")
 
 data = pd.read_csv('../fer2013-data/fer2013.csv')
 # Save and extract data from
