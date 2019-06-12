@@ -40,5 +40,5 @@ acc = (count/len(y)) * 100
 # saving values for confusion matrix and analysis
 np.save('truey', truey)
 np.save('predy', predy)
-print("Predicted and true label values saved")
-print("Accuracy on test set :" + str(acc) + "%")
+print("Predicted and true label values saved.")
+print("Accuracy on test set: " + str(acc) + "%")
