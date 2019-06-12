@@ -28,8 +28,8 @@ y = None
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
 # loading image
-full_size_image = cv2.imread(sys.argv[2]) # second cli argument is the image!
-print("Image loaded: " + sys.argv[2])
+full_size_image = cv2.imread(sys.argv[1])  # second cli argument is the image!
+print("Image loaded: " + sys.argv[1])
 gray = cv2.cvtColor(full_size_image, cv2.COLOR_RGB2GRAY)
 face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 faces = face.detectMultiScale(gray, 1.3, 10)
