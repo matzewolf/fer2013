@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import itertools
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,7 +9,7 @@ y_true = np.load('./truey.npy')
 y_pred = np.load('./predy.npy')
 cm = confusion_matrix(y_true, y_pred)
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
-title='Confusion matrix'
+title = 'Confusion matrix'
 print(cm)
 
 plt.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
@@ -20,8 +22,8 @@ fmt = 'd'
 thresh = cm.max() / 2.
 for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
     plt.text(j, i, format(cm[i, j], fmt),
-            horizontalalignment="center",
-            color="white" if cm[i, j] > thresh else "black")
+             horizontalalignment="center",
+             color="white" if cm[i, j] > thresh else "black")
 
 plt.ylabel('True label')
 plt.xlabel('Predicted label')
