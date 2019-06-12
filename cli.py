@@ -7,6 +7,7 @@ from keras.layers import Dense
 from keras.models import model_from_json
 import numpy
 import os
+import sys
 import numpy as np
 import cv2
 
@@ -27,8 +28,8 @@ y = None
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
 # loading image
-full_size_image = cv2.imread("test.jpg")
-print("Image Loaded")
+full_size_image = cv2.imread(sys.argv[2]) # second cli argument is the image!
+print("Image loaded: " + sys.argv[2])
 gray = cv2.cvtColor(full_size_image, cv2.COLOR_RGB2GRAY)
 face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 faces = face.detectMultiScale(gray, 1.3, 10)
@@ -42,7 +43,7 @@ for (x, y, w, h) in faces:
     # predicting the emotion
     yhat = loaded_model.predict(cropped_img)
     cv2.putText(full_size_image, labels[int(np.argmax(yhat))], (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 1, cv2.LINE_AA)
-    print("Emotion: "+labels[int(np.argmax(yhat))])
+    print("Emotion: " + labels[int(np.argmax(yhat))])
 
 cv2.imshow('Emotion', full_size_image)
 cv2.waitKey()
