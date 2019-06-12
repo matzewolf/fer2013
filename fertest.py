@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # load json and create model
 from __future__ import division
 from keras.models import Sequential
