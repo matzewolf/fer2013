@@ -1,4 +1,17 @@
+# Python3 venv:
+*.cfg
+bin/
+include/
+lib/
+share/
+
+# Temporary numpy files:
 *.npy
+
+# Test images:
 *.jpg
 Tests
+Expressions
+
+# IDE files:
 .idea
