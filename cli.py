@@ -10,6 +10,7 @@ import os
 import sys
 import numpy as np
 import cv2
+from matplotlib import pyplot as plt
 
 # loading the model
 json_file = open('fer.json', 'r')
@@ -45,5 +46,6 @@ for (x, y, w, h) in faces:
     cv2.putText(full_size_image, labels[int(np.argmax(yhat))], (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 1, cv2.LINE_AA)
     print("Emotion: " + labels[int(np.argmax(yhat))])
 
-cv2.imshow('Emotion', full_size_image)
-cv2.waitKey()
+full_size_image = full_size_image[:, :, ::-1]  # converts cv2's BGR to matplotlib's RGB system
+plt.imshow(full_size_image)
+plt.show()
